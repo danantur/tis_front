@@ -1,0 +1,21 @@
+{
+	"paths": {
+		"/api/todos": {
+			"get": {
+				"tags": ["API"],
+				"summary": "Получение всей коллекции",
+				"description": "",
+				"operationId": "updatePet",
+				"consumes": ["application/json"],
+				"produces": ["application/json"],
+
+				"responses": {
+					"200": { "description": "OK" },
+					"400": { "description": "Invalid ID supplied" },
+					"404": { "description": "Pet not found" },
+					"405": { "description": "Validation exception" }
+				}
+			}
+		}
+	}
+}
