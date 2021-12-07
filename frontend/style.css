@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#todos {
+    width: 400px;
+    height: 500px;
+    border: solid 1px black;
+}
+
+.todo {
+    width: 368px;
+    height: 22px;
+    margin: 10px;
+    padding: 7px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px gray;
+    display: flex;
+    align-items: center;
+}
+
+.todo input[type="text"] {
+    border: none;
+    width: 260px;
+    margin-right: 5px;
+}
+
+.todo .action {
+    width: fit-content;
+    margin-left: 10px;
+}

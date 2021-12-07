@@ -16,7 +16,7 @@ const options = {
 		openapi: '3.0.0',
 		info: {
 			title: 'server API',
-			ёversion: '1.0.0',
+			version: '1.0.0',
 		},
 		basePath: '/',
 		...SwaggegDoc,
@@ -45,6 +45,12 @@ let todoList = [
 ];
 var db = new FakeDB(todoList);
 
+app.use(express.static(__dirname + '/frontend'));
+
+app.get('/todos', (req, res) => {
+	res.sendFile("frontend/index.html", { root: '.' })
+});
+
 app.get('/api/todos', (req, res) => {
 	db.getCollection()
 		.then((collection) => {
@@ -60,6 +66,7 @@ app.get('/api/todos', (req, res) => {
 			}),
 		);
 });
+
 app.get('/api/todos/:id', (req, res) => {
 	db.getItem(req.params.id)
 		.then((collection) => {
